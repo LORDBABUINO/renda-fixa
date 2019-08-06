@@ -12,6 +12,8 @@ export class CardComponent implements OnInit {
   nome = 'bradesco fi rf idka pré 2'
   cnpj = "24.022.566/0001-82"
   aplicacao_minima = 10000
+  liquidez = 'D+0'
+  rentabilidade = 15.07
   constructor() { }
 
   ngOnInit() {

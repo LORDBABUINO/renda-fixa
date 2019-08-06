@@ -10,12 +10,24 @@
     <small class="cnpj">CNPJ: {{cnpj}}</small>
   </div>
   <div class="card__content">
-    <label class="label" for="">Valor Mínimo</label>
-    <span class="minimal">{{aplicacao_minima | currency: 'BRL': 'symbol': '4.2-2': 'pt'}}</span>
-    <label class="label" for="">Liquidez</label>
-    <strong class="liquidez">{{liquidez}}</strong>
-    <label class="label" for="">Rentabilidade Anual</label>
-    <strong class="rentability">{{rentabilidade}}</strong>
-    <a class="details" href="">+DETALHES</a>
+    <div class="row">
+      <div class="col">
+        <label class="label" for="">Valor Mínimo</label>
+        <span class="minimal">{{aplicacao_minima | currency: 'BRL': 'symbol': '4.2-2': 'pt'}}</span>
+      </div>
+      <div class="col col--right">
+        <label class="label" for="">Liquidez</label>
+        <strong class="liquidez">{{liquidez}}</strong>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <label class="label" for="">Rentabilidade Anual</label>
+        <strong class="rentability">{{rentabilidade}}%</strong>
+      </div>
+      <div class="col col--right">
+        <span class="details" href="">+detalhes</span>
+      </div>
+    </div>
   </div>
 </div>
