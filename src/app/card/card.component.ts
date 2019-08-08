@@ -1,25 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-import { CardsService } from '../cards.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css'],
-  providers: [CardsService]
+  styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
 
+  @Input() card;
   constructor(
-    private cardsService: CardsService
+    private router: Router
   ) { }
 
   ngOnInit() {
-    this.cardsService.getSearch()
-      .subscribe(([card]) => {
-        Object.keys(card).map(key => {
-          this[key] = card[key];
-        });
-      });
   }
 
+  showDetails(cnpj) {
+    this.router.navigateByUrl(`details/${btoa(cnpj)}`);
+  }
 }

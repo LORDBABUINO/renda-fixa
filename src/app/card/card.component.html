@@ -1,29 +1,29 @@
-<div class="card">
+<div class="card" (click)="showDetails(card.cnpj)">
   <div
     [ngClass]="{
       'card__title': true,
-      'card__title--green': perfil === 'moderado',
-      'card__title--orange': perfil === 'agressivo'
-    }">{{classe}}</div>
+      'card__title--green': card.perfil === 'moderado',
+      'card__title--orange': card.perfil === 'agressivo'
+    }">{{card.classe}}</div>
   <div class="card__identifier">
-    <strong class="title">{{nome}}</strong>
-    <small class="cnpj">CNPJ: {{cnpj}}</small>
+    <strong class="title">{{card.nome}}</strong>
+    <small class="cnpj">CNPJ: {{card.cnpj}}</small>
   </div>
   <div class="card__content">
     <div class="row">
       <div class="col">
         <label class="label" for="">Valor Mínimo</label>
-        <span class="minimal">{{aplicacao_minima | currency: 'BRL': 'symbol': '4.2-2': 'pt'}}</span>
+        <span class="minimal">{{card.aplicacao_minima | currency: 'BRL': 'symbol': '4.2-2': 'pt'}}</span>
       </div>
       <div class="col col--right">
         <label class="label" for="">Liquidez</label>
-        <strong class="liquidez">{{liquidez}}</strong>
+        <strong class="liquidez">{{card.liquidez}}</strong>
       </div>
     </div>
     <div class="row">
       <div class="col">
         <label class="label" for="">Rentabilidade Anual</label>
-        <strong class="rentability">{{rentabilidade}}%</strong>
+        <strong class="rentability">{{card.rentabilidade}}%</strong>
       </div>
       <div class="col col--right">
         <span class="details" href="">+detalhes</span>

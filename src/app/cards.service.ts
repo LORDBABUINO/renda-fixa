@@ -6,7 +6,8 @@ export class CardsService {
 
   constructor(private http: HttpClient) { }
 
-  api = 'http://localhost:4200/assets/data.json';
+  api = 'http://localhost:4200/assets/';
 
-  getSearch = () => this.http.get(this.api);
+  getSearch = () => this.http.get(this.api + 'data.json');
+  getDetails = () => this.http.get(this.api + 'details.json');
 }

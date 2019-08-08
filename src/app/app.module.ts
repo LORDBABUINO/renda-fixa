@@ -7,13 +7,17 @@ import localePt from '@angular/common/locales/pt';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
+import { CardListComponent } from './card-list/card-list.component';
+import { DetailsComponent } from './details/details.component';
 
 registerLocaleData(localePt, 'pt');
 
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent
+    CardComponent,
+    CardListComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
