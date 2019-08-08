@@ -16,7 +16,7 @@ export class CardListComponent implements OnInit {
 
   ngOnInit() {
     this.cardsService.getSearch()
-      .subscribe((cardList) => {
+      .subscribe((cardList: any[]) => {
         this.cardList = cardList;
       });
   }
