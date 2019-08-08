@@ -10,7 +10,7 @@ import { CardsService } from '../cards.service';
 })
 export class DetailsComponent implements OnInit {
 
-  cnpj;
+  cnpj: string;
   details;
   constructor(
     private cardsService: CardsService,
@@ -21,7 +21,7 @@ export class DetailsComponent implements OnInit {
     this.route.paramMap.subscribe((response: any) => {
       this.cnpj = atob(response.get('cnpj'));
       this.cardsService.getDetails()
-        .subscribe(({[this.cnpj]: cnpj}) => {
+        .subscribe(({[this.cnpj]: cnpj}: {[key in string]: string}) => {
           this.details = cnpj;
         });
     });
